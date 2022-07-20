@@ -17,7 +17,8 @@ def test_split_male_female():
     data_set = {
         1: {"name": "Noam", "age": 26, "sex": "male"},
         2: {"name": "Tal", "age": 25, "sex": "female"},
-        3: {"name": "Omri", "age": 37, "sex": "male"}
+        3: {"name": "Omri", "age": 37, "sex": "male"},
+        4: {"name": "Yael", "age": 23, "sex": "female"}
     }
     female_set, male_set = homework3.split_male_female(data_set)
     mylogger.warning("in test for split_male_female")
@@ -34,7 +35,8 @@ def test_find_median_average(capsys):
     data_set = {
         1: {"name": "Noam", "age": 26, "sex": "male"},
         2: {"name": "Tal", "age": 25, "sex": "female"},
-        3: {"name": "Omri", "age": 37, "sex": "male"}
+        3: {"name": "Omri", "age": 37, "sex": "male"},
+        4: {"name": "Yael", "age": 23, "sex": "female"}
     }
     homework3.find_median_average(data_set)
     out, err = capsys.readouterr()
@@ -54,7 +56,7 @@ def test_print_values_above(capsys):
         3: {"name": "Omri", "age": 37, "sex": "male"},
         4: {"name": "Yael", "age": 23, "sex": "female"}
     }
-    homework3.print_values_above(data_set,27)
+    homework3.print_values_above(data_set, 27)
     out, err = capsys.readouterr()
     mylogger.warning("in test for print_values_above")
     assert out == "{'name': 'Omri', 'age': 37, 'sex': 'male'}\n"
