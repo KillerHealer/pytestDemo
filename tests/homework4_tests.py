@@ -139,7 +139,7 @@ def test_getNextDays():
     :return: PASSED/FAILED
     """
     d1 = Date(30, 9, 2021)
-    d2 = Date(4, 10, 2021)
+    d2 = Date(5, 10, 2021)
     mylogger.warning("in test for getNextDays")
     assert d1.getNextDays(5) == d2
 
