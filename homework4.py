@@ -2,6 +2,7 @@ class Date:
     """
     My version of the Date class. Thank you very much!!!
     """
+
     def __init__(self, day: int, month: int, year: int):
         """
         this class gets these three params and creates a date
@@ -72,7 +73,7 @@ class Date:
         :param other: the other date to check against type Date
         :return: true or false
         """
-        return not self._day < other._day and self._month < other._month and self._year < other._year
+        return not self._day < other._day and not self._month < other._month and not self._year < other._year
 
     def __le__(self, other) -> bool:
         """
@@ -80,7 +81,7 @@ class Date:
         :param other: the other date to check against type Date
         :return: true or false
         """
-        return not self._day > other._day and self._month > other._month and self._year > other._year
+        return not self._day > other._day and not self._month > other._month and not self._year > other._year
 
     def __ne__(self, other) -> bool:
         """
@@ -130,18 +131,19 @@ class Date:
                 return True
             else:
                 return False
-        if self._year % 4 == 0:
+        elif self._year % 4 == 0:
             if self._month == 2:
                 if 1 <= self._day <= 29:
                     return True
                 else:
                     return False
+        elif self._month == 2:
+            if 1 <= self._day <= 28:
+                return True
+            else:
+                return False
         else:
-            if self._month == 2:
-                if 1 <= self._day <= 28:
-                    return True
-                else:
-                    return False
+            return True
 
     def getNextDay(self):
         """
