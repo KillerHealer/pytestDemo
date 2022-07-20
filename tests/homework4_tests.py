@@ -1,5 +1,4 @@
 from homework4 import Date
-import logging
 import pytest
 import logging
 
