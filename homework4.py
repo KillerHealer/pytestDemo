@@ -208,11 +208,11 @@ class Date:
                     return tmp
         if num >= 32:
             if self._month == 12:
-                dta = num - 30
+                dta = num - 31
                 tmp = Date(dta, 1, self._year + 1)
                 return tmp
             else:
-                dta = num - 30
+                dta = num - 31
                 tmp = Date(dta, self._month + 1, self._year)
                 return tmp
         tmp = Date(num, self._month, self._year)
