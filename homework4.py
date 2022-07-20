@@ -35,7 +35,8 @@ class Date:
         :param other: the other date to check against type Date
         :return: True/False if they are equal or not
         """
-        return self._day == other._day and self._month == other._month and self._year == other._year
+        if self._day == other._day and self._month == other._month and self._year == other._year:
+            return True
 
     def __lt__(self, other) -> bool:
         """
@@ -150,31 +151,32 @@ class Date:
         if today is 28/2/2016 tomorrow is 1/3/2017
         if today is 31/12/2000 tomorrow is 1.1.2001
         """
-        if self._month == 4 or self._month == 6 \
-                or self._month == 9 \
-                or self._month == 11:
-            if self._day == 30:
-                tmp = Date(1, self._month + 1, self._year)
-                return tmp
-        if self._year % 4 == 0:
-            if self._month == 2:
-                if self._day == 29:
+        if self.isValid():
+            if self._month == 4 or self._month == 6 \
+                    or self._month == 9 \
+                    or self._month == 11:
+                if self._day == 30:
                     tmp = Date(1, self._month + 1, self._year)
                     return tmp
-        else:
-            if self._month == 2:
-                if self._day == 28:
-                    tmp = Date(1, self._month + 1, self._year)
-                    return tmp
-        if self._day == 31:
-            if self._month == 12:
-                tmp = Date(1, 1, self._year + 1)
-                return tmp
+            if self._year % 4 == 0:
+                if self._month == 2:
+                    if self._day == 29:
+                        tmp = Date(1, self._month + 1, self._year)
+                        return tmp
             else:
-                tmp = Date(1, self._month + 1, self._year)
-                return tmp
-        tmp = Date(self._day + 1, self._month, self._year)
-        return tmp
+                if self._month == 2:
+                    if self._day == 28:
+                        tmp = Date(1, self._month + 1, self._year)
+                        return tmp
+            if self._day == 31:
+                if self._month == 12:
+                    tmp = Date(1, 1, self._year + 1)
+                    return tmp
+                else:
+                    tmp = Date(1, self._month + 1, self._year)
+                    return tmp
+            tmp = Date(self._day + 1, self._month, self._year)
+            return tmp
 
     def getNextDays(self, daysToAdd: int):
         """
