@@ -7,6 +7,7 @@ logging.basicConfig(level=logging.DEBUG)
 mylogger = logging.getLogger()
 
 
+@pytest.mark.Date
 def test___init__():
     """
     tests to see if __init__ really created a new Date
@@ -19,6 +20,7 @@ def test___init__():
     assert d1._year == 2022
 
 
+@pytest.mark.Date
 def test__str__():
     """
     tests to see if __str__ made a good string out of Date
@@ -29,6 +31,7 @@ def test__str__():
     assert d1.__str__() == "20/7/2022"
 
 
+@pytest.mark.Date
 def test___eq__():
     """
     tests to see if __eq__ checks if 2 Dates are equal
@@ -40,6 +43,7 @@ def test___eq__():
     assert d1 == d2
 
 
+@pytest.mark.Date
 def test___lt__():
     """
     tests to see if d2 is lower than d1
@@ -51,6 +55,7 @@ def test___lt__():
     assert d2 < d1
 
 
+@pytest.mark.Date
 def test___gt__():
     """
     tests to see if d1 is greater than d2
@@ -62,6 +67,7 @@ def test___gt__():
     assert d1 > d2
 
 
+@pytest.mark.Date
 def test___ge__():
     """
     tests to see if d1 is greater or equal to d2
@@ -73,6 +79,7 @@ def test___ge__():
     assert d1 >= d2
 
 
+@pytest.mark.Date
 def test___le__():
     """
     tests to see if d1 is lower or equal to d2
@@ -84,6 +91,7 @@ def test___le__():
     assert d1 <= d2
 
 
+@pytest.mark.Date
 def test___ne__():
     """
     tests to see if d1 is not equal to d2
@@ -95,6 +103,7 @@ def test___ne__():
     assert d1 != d2
 
 
+@pytest.mark.Date
 def test___sub__():
     """
     tests to see if d1 - d2 = 7 days in a date perspective
@@ -106,6 +115,7 @@ def test___sub__():
     assert d1.__sub__(d2) == 7
 
 
+@pytest.mark.Date
 def test_isValid():
     """
     checks to see if the date is valid
@@ -119,6 +129,7 @@ def test_isValid():
     assert d2.isValid()
 
 
+@pytest.mark.Date
 def test_getNextDay():
     """
     takes the current day and returns the next day
@@ -133,6 +144,7 @@ def test_getNextDay():
     assert d1.getNextDay() == d2
 
 
+@pytest.mark.Date
 def test_getNextDays():
     """
     checks if getNextDays takes current date and adds 'daysToAdd' days to it
