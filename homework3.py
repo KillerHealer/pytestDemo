@@ -52,7 +52,8 @@ if __name__ == '__main__':
     data_set = {
         1: {"name": "Noam", "age": 26, "sex": "male"},
         2: {"name": "Tal", "age": 25, "sex": "female"},
-        3: {"name": "Omri", "age": 37, "sex": "male"}
+        3: {"name": "Omri", "age": 37, "sex": "male"},
+        4: {"name": "Yael", "age": 23, "sex": "female"}
     }
     female_set, male_set = split_male_female(data_set)
     print(f"These are the males: {male_set}")

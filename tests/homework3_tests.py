@@ -39,7 +39,7 @@ def test_find_median_average(capsys):
     homework3.find_median_average(data_set)
     out, err = capsys.readouterr()
     mylogger.warning("in test for find_median_average")
-    assert "29.333333333333332" in out
+    assert "27.75" in out
 
 
 @pytest.mark.set
@@ -51,7 +51,8 @@ def test_print_values_above(capsys):
     data_set = {
         1: {"name": "Noam", "age": 26, "sex": "male"},
         2: {"name": "Tal", "age": 25, "sex": "female"},
-        3: {"name": "Omri", "age": 37, "sex": "male"}
+        3: {"name": "Omri", "age": 37, "sex": "male"},
+        4: {"name": "Yael", "age": 23, "sex": "female"}
     }
     homework3.print_values_above(data_set,27)
     out, err = capsys.readouterr()
