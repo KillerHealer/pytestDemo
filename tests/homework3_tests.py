@@ -6,6 +6,7 @@ logging.basicConfig(level=logging.DEBUG)
 mylogger = logging.getLogger()
 
 
+@pytest.mark.set
 def test_split_male_female():
     """
     tests split_male_female()
@@ -24,6 +25,7 @@ def test_split_male_female():
            and female_set[female_set.__iter__().__next__()]["sex"] == "female"
 
 
+@pytest.mark.set
 def test_find_median_average(capsys):
     """
     tests find_median_average
@@ -40,6 +42,7 @@ def test_find_median_average(capsys):
     assert "29.333333333333332" in out
 
 
+@pytest.mark.set
 def test_print_values_above(capsys):
     """
     tests print_values_above()
