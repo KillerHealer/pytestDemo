@@ -58,7 +58,7 @@ if __name__ == '__main__':
     print(f"These are the males: {male_set}")
     print(f"These are the females: {female_set}")
     find_median_average(data_set)
-    print_values_above(data_set)
+    print_values_above(data_set, 26)
 
 
 
